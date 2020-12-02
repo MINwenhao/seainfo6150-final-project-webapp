@@ -48,7 +48,7 @@ function App() {
         <Route path="/" exact component={Home} />
          <Route
           path="/detail/:id"
-          exact
+          
           render={({ match }) => (
             <Detail
               id={match.params.id}
