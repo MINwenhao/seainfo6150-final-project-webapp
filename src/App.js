@@ -1,12 +1,15 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
-
 import Home from "./Home/Home.jsx";
-import Foo from "./Foo/Foo.jsx";
-import Bar from "./Bar/Bar.jsx";
+import Form from "./Form/Form.jsx";
+import Detail from "./Detail/Detail.jsx";
 import Baz from "./Baz/Baz.jsx";
 import Error from "./Error/Error.jsx";
-
+import apartment from "./images/main.png";
+import styles from "./App.module.css";
+import AboutUs from "./AboutUs/AboutUs.jsx";
+import Help from "./Help/Help.jsx";
+import ThankYou from "./ThankYou/ThankYou.jsx";
 // here is some external content. look at the /baz route below
 // to see how this content is passed down to the components via props
 const externalContent = {
@@ -23,36 +26,32 @@ function App() {
         <nav>
           <ul>
             {/* these links should show you how to connect up a link to a specific route */}
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/foo">Foo</Link>
-            </li>
-            <li>
-              <Link to="/bar/hats/sombrero">Bar</Link>
-            </li>
-            <li>
+            {/* <li>
+              <Link to="/" >Home</Link>
+            </li> */}
+            {/* <li>
+              <Link to="/detail/1">Detail</Link>
+            </li>  */}
+             {/* <li>
               <Link to="/baz">Baz</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </header>
+      <Form />
+      <div className={styles.mainPic}>
+          <a href="/"> <img src={apartment} alt="home page pic" className={styles.img} /></a>
+      </div>
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/foo" exact component={Foo} />
-        {/* passing parameters via a route path */}
-        <Route
-          path="/bar/:categoryId/:productId"
+         <Route
+          path="/detail/:id"
           exact
           render={({ match }) => (
-            // getting the parameters from the url and passing
-            // down to the component as props
-            <Bar
-              categoryId={match.params.categoryId}
-              productId={match.params.productId}
+            <Detail
+              id={match.params.id}
             />
           )}
         />
@@ -61,8 +60,15 @@ function App() {
           exact
           render={() => <Baz content={externalContent} />}
         />
+        <Route path="/aboutUs" component={AboutUs}/>
+        <Route path="/Help" component={Help} />
+        <Route path="/ThankYou" component={ThankYou} />
         <Route component={Error} />
-      </Switch>
+      </Switch> 
+      <Link to="/aboutUs">About Us</Link>
+      <br/>
+      <Link to="/help">help</Link>
+      
     </>
   );
 }

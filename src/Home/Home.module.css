@@ -1,0 +1,22 @@
+.img {
+    height: 150px;
+}
+
+.leftRight {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.CategoryColumn {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.CategoryRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

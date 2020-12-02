@@ -3,7 +3,7 @@ import React from 'react'
 const Error = () => {
     return (
         <div>
-            The error page
+            The error pages
         </div>
     )
 }

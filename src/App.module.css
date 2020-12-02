@@ -1,0 +1,11 @@
+.img {
+
+    height: 80px;
+
+
+}
+
+.mainPic {
+    display: flex;
+    justify-content: center;
+}
