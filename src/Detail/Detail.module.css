@@ -1,6 +1,17 @@
+.top {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    justify-content: space-evenly;
+
+}
+
 .img {
-    width: 320px;
-    height: 150px;
+    display: flex;
+    width: 80%;
+    height: 400px;
+    align-self: center;
+    margin-bottom: 20px;
 
 }
 
@@ -17,8 +28,35 @@
 
 .CommunityAmenities {
     background-color: cadetblue;
+    width: 80%;
+    align-self: center;
+    margin-bottom: 20px;
+
 }
 
 .ApartmentAmenities {
     background-color: cornflowerblue;
+    width: 80%;
+    align-self: center;
+    margin-bottom: 20px;
+
+}
+
+.button {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    background-color: black;
 }

@@ -16,10 +16,10 @@
         padding: 15px;
         border-radius: 10px;
         grid-gap: 20px 20px;
-        background: #999;
+
     }
 
-    @media(min-width:500px) {
+    @media(min-width:700px) {
         .recommend {
 
             grid-template-columns: 1fr 1fr;
@@ -28,7 +28,7 @@
         }
     }
 
-    @media(min-width:700px) {
+    @media(min-width:1100px) {
         .recommend {
 
             grid-template-columns: 1fr 1fr 1fr;
@@ -36,7 +36,7 @@
         }
     }
 
-    @media(min-width:900px) {
+    @media(min-width:1400px) {
         .recommend {
 
             grid-template-columns: 1fr 1fr 1fr 1fr;

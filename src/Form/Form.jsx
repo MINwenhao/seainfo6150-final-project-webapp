@@ -1,18 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import styles from "./Form.module.css";
 
-const Form = () => {
-  const [submittedForm, setSubmittedForm] = useState();
+const Form = (props) => {
+  // const submittedForm = props.submittedForm;
+
+  const setName = props.setName;
+  const [submittedForm, setSubmittedForm] = useState()
   function onSubmit(e) {
     e.preventDefault();
     const data = new FormData(e.target);
     setSubmittedForm(data);
   };
+  useEffect(() => {
+    if (submittedForm) {
+      setName({
+        firstName: submittedForm.get("firstName")
+        , lastName: submittedForm.get("lastName")
+      })
+
+    }
+  }, [submittedForm, setName])
+
+
+
   return (
     <div>
       {
         submittedForm ? (
-          <div> Welcome {submittedForm.get("firstName")}  {submittedForm.get("lastName")}</div>
+          <Link to="/" >Thanks for your Sign up,Please Click Here Return to Home Page</Link>
         ) : (
 
             <form onSubmit={onSubmit} className={styles.container}>
@@ -56,7 +73,6 @@ const Form = () => {
               <div>
                 <input type="submit" value="confirm" />
               </div>
-
             </form>
           )
       }

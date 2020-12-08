@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import Home from "./Home/Home.jsx";
 import Form from "./Form/Form.jsx";
@@ -19,7 +19,10 @@ const externalContent = {
   text: "Some text in the article",
 };
 
+
+
 function App() {
+  const [name,setName] = useState({"firstName":"","lastName":""});
   return (
     <>
       <header>
@@ -38,17 +41,23 @@ function App() {
           </ul>
         </nav>
       </header>
-      <Form />
+      <div>     
       <div className={styles.mainPic}>
-          <a href="/"> <img src={apartment} alt="home page pic" className={styles.img} /></a>
+          <Link to="/"> <img src={apartment} alt="home page pic" className={styles.img} /></Link>
       </div>
+            <li>
+              <Link to="/Form" >Account</Link>
+            </li>
+             
+          <p>Welcome  {name.firstName}{name.lastName}</p>
+       </div>
+
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/" exact component={Home} />
          <Route
           path="/detail/:id"
-          
           render={({ match }) => (
             <Detail
               id={match.params.id}
@@ -63,6 +72,13 @@ function App() {
         <Route path="/aboutUs" component={AboutUs}/>
         <Route path="/Help" component={Help} />
         <Route path="/ThankYou" component={ThankYou} />
+        <Route
+          path="/Form"
+          exact
+          render={() => <Form 
+            name={name}
+            setName={setName}/>}
+        />
         <Route component={Error} />
       </Switch> 
       <Link to="/aboutUs">About Us</Link>

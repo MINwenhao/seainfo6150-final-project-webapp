@@ -6,7 +6,7 @@ const Help = () => {
         <div>
             <ul>
                 <li>
-                    <span>Enter the information to register your account</span>
+                    <span>Click on Account to register your account</span>
                 </li>
                 <li>
                     <span>The main screen has some recommended houses</span>
@@ -16,6 +16,9 @@ const Help = () => {
                 </li>
                 <li>
                     <span>Click on the image to get more information</span>
+                </li>
+                <li>
+                    <span>Click on 'detect your home' to return main page</span>
                 </li>
 
             </ul>

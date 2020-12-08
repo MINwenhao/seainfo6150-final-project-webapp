@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { isEmpty } from "lodash";
 import styles from "./Detail.module.css";
+import { Link } from "react-router-dom";
 
 const Detail = (props) => {
     const [fetchedData, setFetchedData] = useState();
+    const [count, setCount] = useState(0);
 
     const id = (props.id)
     useEffect(() => {
@@ -21,16 +23,37 @@ const Detail = (props) => {
         console.log(fetchedData[id]);
     }
 
+    function next() {
+        if (count < fetchedData[id].pictures.length - 1) {
+            setCount(count + 1);
+        } else {
+            setCount(0);
+        }
+    }
+
+    function previous() {
+        if (count > 0) {
+            setCount(count - 1);
+        } else {
+            setCount(fetchedData[id].pictures.length - 1)
+        }
+    }
+
 
 
     return isEmpty(fetchedData) ? null : (
         <div className={styles.main}>
             <div className={styles.leftSide}>
                 <div className={styles.pictures}>
-                    <img src={fetchedData[id].pictures[0]}
-                        alt="first pic of the source" className={styles.img} />
-                    <img src={fetchedData[id].pictures[1]}
-                        alt="first pic of the source" className={styles.img} />
+
+                    <div className={styles.top}>
+                        <button className={styles.button} onClick={previous}> 《 </button>
+                        <div className={styles.img}>
+                            <img className={styles.img} src={fetchedData[id].pictures[count]} alt="pic of the source" />
+                        </div>
+                        <button className={styles.button} onClick={next}> 》 </button>
+                    </div>
+
                 </div>
                 <div className={styles.ApartmentAmenities}>
                     <span>Apartment Amenities</span>
@@ -56,7 +79,7 @@ const Detail = (props) => {
                 <p>landlord: {fetchedData[id].owner.name}</p>
                 <p>connect: {fetchedData[id].owner.connect}</p>
 
-                <a href="/ThankYou">Order Now</a>
+                <Link to="/ThankYou">Order Now</Link>
             </div>
 
         </div>
