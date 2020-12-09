@@ -9,3 +9,21 @@
     display: flex;
     justify-content: center;
 }
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: large;
+
+}
+
+.root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'Roboto Mono', monospace;
+    font-size: large;
+
+}

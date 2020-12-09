@@ -29,34 +29,34 @@ const Home = () => {
                 <button onClick={() => {
                     setCategory((fetchedData || []).filter(message => message.category === "house"));
                     setStatus('category');
-                }}>House</button>
+                }} className={styles.button}>House</button>
                 <button onClick={() => {
                     setCategory((fetchedData || []).filter(message => message.category === "apartment"));
                     setStatus('category');
-                }} >Apartment</button>
+                }} className={styles.button}>Apartment</button>
                 <button onClick={() => {
                     setCategory((fetchedData || []).filter(message => message.category === "room"));
                     setStatus('category');
-                }}>Single Room</button>
+                }} className={styles.button}>Single Room</button>
             </div>
             <div className={styles.leftRight}>
                 <div className={styles.CategoryColumn}>
                     <button onClick={() => {
                         setCategory((fetchedData || []).filter(message => message.rentTime === "long-term"));
                         setStatus('category');
-                    }}>Long Term</button>
+                    }} className={styles.button}>Long Term</button>
                     <button onClick={() => {
                         setCategory((fetchedData || []).filter(message => message.rentTime === "short-term"));
                         setStatus('category');
-                    }} >Short Term</button>
+                    }} className={styles.button}>Short Term</button>
                     <button onClick={() => {
                         setCategory((fetchedData || []).filter(message => message.owner.type === "private"));
                         setStatus('category');
-                    }}>Personal</button>
+                    }} className={styles.button}>Personal</button>
                     <button onClick={() => {
                         setCategory((fetchedData || []).filter(message => message.owner.type === "real estate"));
                         setStatus('category');
-                    }}>Real estate company</button>
+                    }} className={styles.button}>Real estate company</button>
                 </div>
                 <div>
                     <Main status={status} fetchedData={fetchedData} category={category} />

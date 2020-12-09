@@ -41,15 +41,18 @@ function App() {
           </ul>
         </nav>
       </header>
-      <div>     
-      <div className={styles.mainPic}>
-          <Link to="/"> <img src={apartment} alt="home page pic" className={styles.img} /></Link>
-      </div>
-            <li>
-              <Link to="/Form" >Account</Link>
-            </li>
-             
-          <p>Welcome  {name.firstName}{name.lastName}</p>
+      <div className={styles.header}>     
+        <div className={styles.mainPic}>
+            <Link to="/"> <img src={apartment} alt="home page pic" className={styles.img} /></Link>
+        </div >
+        <div className={styles.LogIn}>
+          <div>
+          <Link to="/Form" >Account</Link>
+          </div>
+          <div>
+          <p>Welcome  {name.firstName}   {name.lastName}</p>
+          </div>
+        </div>
        </div>
 
       {/* A <Switch> looks through its children <Route>s and
@@ -81,9 +84,11 @@ function App() {
         />
         <Route component={Error} />
       </Switch> 
+      <div className={styles.root}>
       <Link to="/aboutUs">About Us</Link>
-      <br/>
+      
       <Link to="/help">help</Link>
+      </div>
       
     </>
   );

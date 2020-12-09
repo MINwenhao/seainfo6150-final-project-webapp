@@ -44,17 +44,16 @@ const Detail = (props) => {
     return isEmpty(fetchedData) ? null : (
         <div className={styles.main}>
             <div className={styles.leftSide}>
-                <div className={styles.pictures}>
 
-                    <div className={styles.top}>
-                        <button className={styles.button} onClick={previous}> 《 </button>
-                        <div className={styles.img}>
-                            <img className={styles.img} src={fetchedData[id].pictures[count]} alt="pic of the source" />
-                        </div>
-                        <button className={styles.button} onClick={next}> 》 </button>
+                <div className={styles.top}>
+                    <button className={styles.button} onClick={previous}> 《 </button>
+                    <div className={styles.img}>
+                        <img className={styles.img} src={fetchedData[id].pictures[count]} alt="pic of the source" />
                     </div>
-
+                    <button className={styles.button} onClick={next}> 》 </button>
                 </div>
+
+
                 <div className={styles.ApartmentAmenities}>
                     <span>Apartment Amenities</span>
                     <ul>

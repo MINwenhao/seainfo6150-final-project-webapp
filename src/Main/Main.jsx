@@ -1,5 +1,6 @@
 import React from 'react'
 import Recommend from "../Recommend/Recommend.jsx";
+//import styles from "./Main.module.css";
 import styles from "./Main.module.css";
 
 const Main = (props) => {
@@ -15,17 +16,19 @@ const Main = (props) => {
         return (
             <div>
                 <div className="recommend">
-                    <p>recommend</p>
+                    <div className={styles.divider}><span></span><span>Recommend</span><span></span></div>
                     <div >
                         <Recommend recommend={recommend} />
                     </div>
                 </div>
                 <div className="famous real estate">
-                    <p>Famous Real Estate</p>
+                    <div className={styles.divider}><span></span><span>Famous Real Estate</span><span></span></div>
+
                     <Recommend recommend={famousRealEstate} />
                 </div>
                 <div className="popular choice">
-                    <p>Popular Choice</p>
+                    <div className={styles.divider}><span></span><span>Popular Choice</span><span></span></div>
+
                     <Recommend recommend={popularChoice} />
                 </div>
             </div>
@@ -33,7 +36,7 @@ const Main = (props) => {
     } else if (props.status === "category") {
         return (
             <div className="category result">
-                <p>category</p>
+
                 <Recommend recommend={props.category} />
             </div>
         )

@@ -1,30 +1,35 @@
 .top {
     display: flex;
     flex-direction: row;
-    width: 1200px;
+    width: auto;
     justify-content: space-evenly;
 
 }
 
-.img {
+.leftSide {
     display: flex;
-    width: 80%;
-    height: 400px;
+    flex-direction: column;
+    width: auto;
+}
+
+
+
+.img {
+
+    width: auto;
+    max-height: 300px;
     align-self: center;
     margin-bottom: 20px;
 
 }
 
 .portrait {
-    width: 320px;
-    height: 150px;
+    width: auto;
+    max-height: 150px;
 
 }
 
-.main {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-}
+
 
 .CommunityAmenities {
     background-color: cadetblue;
@@ -59,4 +64,29 @@
 
 .button:hover {
     background-color: black;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+@supports (display: flex) {
+
+    @media(max-width:900px) {
+        .main {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.rightSide {
+    align-self: center;
+    margin-bottom: 20px;
 }

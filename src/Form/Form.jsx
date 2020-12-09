@@ -46,32 +46,35 @@ const Form = (props) => {
               </div>
               <div>
                 <label htmlFor="position">Position</label>
-                <select name="position" id="position">
+                <select name="position" id="position" >
                   <option value="Student">Student</option>
                   <option value="designer">designer</option>
                   <option value="programmer">programmer</option>
                   <option value="others">others</option>
                 </select>
               </div>
-              <p> select your age range</p>
-              <div>
-                <input type="radio" name="ageRange" id="adolescent" />
-                <label htmlFor="adolescent">less than 19</label>
+
+              <div className={styles.agePart}>
+                <p> select your age range</p>
+                <div>
+                  <input type="radio" name="ageRange" id="adolescent" />
+                  <label htmlFor="adolescent">less than 19</label>
+                </div>
+                <div>
+                  <input type="radio" name="ageRange" id="youngAdult" />
+                  <label htmlFor="youngAdult">19-30</label>
+                </div>
+                <div>
+                  <input type="radio" name="ageRange" id="middleAge" />
+                  <label htmlFor="middleAge">31-60</label>
+                </div>
+                <div>
+                  <input type="radio" name="ageRange" id="oldAdult" />
+                  <label htmlFor="oldAdult">more than 60</label>
+                </div>
               </div>
               <div>
-                <input type="radio" name="ageRange" id="youngAdult" />
-                <label htmlFor="youngAdult">19-30</label>
-              </div>
-              <div>
-                <input type="radio" name="ageRange" id="middleAge" />
-                <label htmlFor="middleAge">31-60</label>
-              </div>
-              <div>
-                <input type="radio" name="ageRange" id="oldAdult" />
-                <label htmlFor="oldAdult">more than 60</label>
-              </div>
-              <div>
-                <input type="submit" value="confirm" />
+                <input type="submit" value="confirm" className={styles.button} />
               </div>
             </form>
           )
