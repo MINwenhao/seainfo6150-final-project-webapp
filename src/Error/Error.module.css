@@ -1,0 +1,9 @@
+.error {
+    background-color: burlywood;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3cm;
+    font-size: large;
+}
